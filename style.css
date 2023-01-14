@@ -1,0 +1,152 @@
+:root {
+    --color-accent: hsl(25, 97%, 53%);
+    --color-text-primary: hsl(0, 0%, 100%);
+    --color-text-secondary: hsl(217, 12%, 63%);
+    --color-additional-bg: hsl(216, 12%, 24%);
+    --color-card-bg: hsl(213, 19%, 17%);
+    --color-main-bg: hsl(216, 12%, 8%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    font-family: "Overpass";
+    color: var(--color-text-primary);
+    background-color: var(--color-main-bg);
+}
+
+.card {
+    display: none;
+    max-width: 23rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--color-card-bg);
+}
+
+.card--active {
+    display: block;
+}
+
+.card--thank-you.card--active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card__rating {
+    margin-top: 1rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 5rem;
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    background-color: var(--color-additional-bg);
+}
+
+.card__star-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.8rem;
+    border-radius: 50%;
+    background-color: var(--color-additional-bg);
+}
+
+.card__title {
+    margin-top: 1rem;
+}
+
+.card__description {
+    margin: 1rem 0;
+    color: var(--color-text-secondary);
+}
+
+.card__form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__rating-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    color: var(--color-text-secondary);
+    user-select: none;
+}
+
+.card__rating-btn > span {
+    position: absolute;
+    pointer-events: none;
+}
+
+.card__rating-btn > input[type="radio"] {
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 50%;
+    background-color: var(--color-additional-bg);
+    cursor: pointer;
+}
+
+.card__rating-btn > input[type="radio"]:hover,
+.card__rating-btn > input[type="radio"]:focus {
+    background-color: var(--color-accent);
+}
+
+.card__rating-btn > input[type="radio"]:hover ~ span,
+.card__rating-btn > input[type="radio"]:focus ~ span,
+.card__rating-btn > input[type="radio"]:checked ~ span {
+    color: var(--color-text-primary);
+}
+
+.card__rating-btn > input[type="radio"]:checked {
+    background-color: var(--color-text-secondary);
+}
+
+.card__submit-btn {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 5rem;
+    font-family: "Overpass";
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+    color: var(--color-text-primary);
+    background-color: var(--color-accent);
+    cursor: pointer;
+}
+
+.card__submit-btn:hover,
+.card__submit-btn:focus {
+    color: var(--color-accent);
+    background-color: var(--color-text-primary);
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 11px;
+    text-align: center;
+}
+
+footer a {
+    color: hsl(228, 45%, 44%);
+}
